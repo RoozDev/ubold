@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UboldController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::controller(UboldController::class)->group(function (){
+    Route::get('/dashboard','AdminDashboard')->name('admin.dashboard');
 });
